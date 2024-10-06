@@ -1,0 +1,133 @@
+1- Zero-Shot Prompting
+prompt = """
+I have the following document:
+* The city of Ajaccio boasts a rich cultural heritage and vibrant community life. It is not only famous for its historical significance but also for its beautiful landscapes and natural resources, which attract tourists. Furthermore, the local government focuses on sustainable development and improving public services, including health and education.
+
+Indicate whether this document describes history, economy, well-being, education, housing, services, transportation, environment, religious engagement, freedom, security, health, stability, natural resources, cultural resources, attraction, image, income, or political community. By history, we mean past events, historical figures, battles, etc. By economy, we mean economic aspects like industries, finances, trade, etc. If it does not fit these categories, indicate other.
+"""
+response = generator(prompt)
+print(response[0]["generated_text"])
+
+
+2- Keyword Prompting
+
+
+prompt = """
+I have the following document:
+* The city of Ajaccio boasts a rich cultural heritage and vibrant community life. It is not only famous for its historical significance but also for its beautiful landscapes and natural resources, which attract tourists. Furthermore, the local government focuses on sustainable development and improving public services, including health and education.
+
+Indicate whether this document describes history, economy, well-being, education, housing, services, transportation, environment, religious engagement, freedom, security, health, stability, natural resources, cultural resources, attraction, image, income, or political community. 
+
+If the document is related to any of the following keywords, indicate the appropriate category:
+
+For history: "past event", "historical figure", "battle", "revolution", "era".
+
+For economy: "industry", "finance", "trade", "GDP", "income".
+
+For well-being: "quality of life", "happiness", "well-being".
+
+For education: "school", "university", "learning", "education system".
+
+For housing: "housing", "real estate", "accommodation".
+
+For services: "public services", "healthcare", "education services".
+
+For transportation: "transport", "infrastructure", "public transport".
+
+For environment: "sustainability", "nature", "ecology".
+
+For religious engagement: "faith", "religion", "spirituality".
+
+For freedom: "rights", "liberty", "freedom".
+
+For security: "safety", "security", "protection".
+
+For health: "healthcare", "wellness", "medical".
+
+For stability: "stability", "consistency", "predictability".
+
+For natural resources: "water", "minerals", "forests".
+
+For cultural resources: "art", "culture", "heritage".
+
+For attraction: "tourism", "attraction", "visitors".
+
+For image: "reputation", "image", "perception".
+
+For political community: "community", "politics", "government".
+
+If it does not relate to any of these keywords, indicate other.
+"""
+response = generator(prompt)
+print(response[0]["generated_text"])
+
+
+
+3-Few-Shot Prompting
+
+prompt = """
+I have the following document:
+* The city of Ajaccio boasts a rich cultural heritage and vibrant community life. It is not only famous for its historical significance but also for its beautiful landscapes and natural resources, which attract tourists. Furthermore, the local government focuses on sustainable development and improving public services, including health and education.
+
+Indicate whether this document describes history, economy, well-being, education, housing, services, transportation, environment, religious engagement, freedom, security, health, stability, natural resources, cultural resources, attraction, image, income, or political community. 
+
+Here are some examples:
+
+Example 1:
+Document: "The French Revolution marked a significant change in government and society."
+Classification: history
+
+Example 2:
+Document: "Investment in renewable energy has been increasing, focusing on sustainability."
+Classification: economy
+
+Example 3:
+Document: "Community programs aim to enhance the quality of life for all residents."
+Classification: well-being
+
+Example 4:
+Document: "Local schools have been improving their curriculum to better prepare students for the future."
+Classification: education
+
+If the document relates to any of the following keywords, indicate the appropriate category:
+
+For history: "past event", "historical figure", "battle", "revolution", "era".
+
+For economy: "industry", "finance", "trade", "GDP", "income".
+
+For well-being: "quality of life", "happiness", "well-being".
+
+For education: "school", "university", "learning", "education system".
+
+For housing: "housing", "real estate", "accommodation".
+
+For services: "public services", "healthcare", "education services".
+
+For transportation: "transport", "infrastructure", "public transport".
+
+For environment: "sustainability", "nature", "ecology".
+
+For religious engagement: "faith", "religion", "spirituality".
+
+For freedom: "rights", "liberty", "freedom".
+
+For security: "safety", "security", "protection".
+
+For health: "healthcare", "wellness", "medical".
+
+For stability: "stability", "consistency", "predictability".
+
+For natural resources: "water", "minerals", "forests".
+
+For cultural resources: "art", "culture", "heritage".
+
+For attraction: "tourism", "attraction", "visitors".
+
+For image: "reputation", "image", "perception".
+
+For political community: "community", "politics", "government".
+
+If it does not relate to any of these keywords, indicate other.
+"""
+response = generator(prompt)
+print(response[0]["generated_text"])
